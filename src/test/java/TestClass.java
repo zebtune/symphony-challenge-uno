@@ -43,7 +43,7 @@ public class TestClass {
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
-        //Elements / Variables
+        //Form Elements/Variables
         WebElement gender2 = driver.findElement(By.id("id_gender2"));
         WebElement firstName = driver.findElement(By.id("customer_firstname"));
         WebElement lastName = driver.findElement(By.id("customer_lastname"));
@@ -67,9 +67,6 @@ public class TestClass {
         WebElement alias = driver.findElement(By.id("alias"));
         WebElement submitBtn = driver.findElement(By.id("submitAccount"));
 
-
-
-
         //Personal information
         gender2.click();
         firstName.sendKeys(faker.name().firstName());
@@ -83,8 +80,6 @@ public class TestClass {
         newsletter.click();
         specOffers.click();
 
-
-
         //Address Details
         company.sendKeys(faker.company().name());
         address1.sendKeys(faker.address().fullAddress());
@@ -93,7 +88,6 @@ public class TestClass {
         state.selectByIndex(Functions.randomRange(1, 50));
         zipCode.sendKeys(Functions.randomRangeToString(10000, 99999));
         additionalInfo.sendKeys(faker.backToTheFuture().quote());
-
 
         homePhone.sendKeys(faker.phoneNumber().cellPhone());
         mobilePhone.sendKeys(faker.phoneNumber().cellPhone());
@@ -109,21 +103,20 @@ public class TestClass {
 
     @Test(priority = 2)
     public void verifyProductsInSection(){
+        //Scroll to section
         JavascriptExecutor jsScroll = (JavascriptExecutor)driver;
         jsScroll.executeScript("window.scrollBy(0,1000)");
         String expectedResult = "7";
 
-        List<WebElement> allElements = driver.findElements(By.xpath("//*[@id=\"homefeatured\"]"));
-        for (WebElement element : allElements) {
-            System.out.println(element.getText());
-        }
-
+        //Sort of a workaround using javascript by printing the number in the alert pop up
         String script = "alert(number = $('ul#homefeatured > li').length);";
         JavascriptExecutor jsScript = (JavascriptExecutor)driver;
         String result = (String) jsScript.executeScript(script);
 
+
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
+        //Here I am using value that's displayed in alert to assert... pretty sure it is wrong, but it was my only reliable solution
         Alert alert = driver.switchTo().alert();
         String alertText = alert.getText();
         System.out.println(alertText);
@@ -154,6 +147,7 @@ public class TestClass {
         WebElement product4 = driver.findElement(By.xpath("//*[@id=\"center_column\"]/ul/li[4]/div/div[2]/h5"));
         WebElement product5 = driver.findElement(By.xpath("//*[@id=\"center_column\"]/ul/li[5]/div/div[2]/h5"));
 
+        //This part could use a  loop.. Looks redundant but it does the job
         productTitle = product1.getText();
         productTitle2 = product2.getText();
         productTitle3 = product3.getText();
