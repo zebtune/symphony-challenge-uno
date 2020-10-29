@@ -147,7 +147,7 @@ public class TestClass {
         WebElement product4 = driver.findElement(By.xpath("//*[@id=\"center_column\"]/ul/li[4]/div/div[2]/h5"));
         WebElement product5 = driver.findElement(By.xpath("//*[@id=\"center_column\"]/ul/li[5]/div/div[2]/h5"));
 
-        //This part could use a  loop.. Looks redundant but it does the job
+        //This part could use a  loop.. Looks repetitive but it does the job
         productTitle = product1.getText();
         productTitle2 = product2.getText();
         productTitle3 = product3.getText();
