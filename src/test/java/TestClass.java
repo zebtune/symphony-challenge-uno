@@ -4,6 +4,7 @@ import com.github.javafaker.service.RandomService;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -16,6 +17,7 @@ import java.util.concurrent.TimeUnit;
 public class TestClass {
     String baseUrl = "http://automationpractice.com/";
     WebDriver driver;
+    //Faker for random generated data
     Faker faker = new Faker();
     FakeValuesService fakeValuesService = new FakeValuesService(
             new Locale("en-GB"), new RandomService());
@@ -108,22 +110,32 @@ public class TestClass {
         jsScroll.executeScript("window.scrollBy(0,1000)");
         String expectedResult = "7";
 
-        //Sort of a workaround using javascript by printing the number in the alert pop up
-        String script = "alert(number = $('ul#homefeatured > li').length);";
-        JavascriptExecutor jsScript = (JavascriptExecutor)driver;
-        String result = (String) jsScript.executeScript(script);
-
-
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        WebElement popularBtn = driver.findElement(By.xpath("//*[@id=\"home-page-tabs\"]/li[1]/a")); //Popular Section
+        WebElement bestSellerBtn = driver.findElement(By.xpath("//*[@id=\"home-page-tabs\"]/li[2]/a")); //Best Seller Section
 
         //Here I am using value that's displayed in alert to assert... pretty sure it is wrong, but it was my only reliable solution
-        Alert alert = driver.switchTo().alert();
-        String alertText = alert.getText();
-        System.out.println(alertText);
-        Assert.assertEquals(expectedResult, alertText);
-        alert.accept();
+        if (popularBtn.isDisplayed()) {
+            //Sort of a workaround using javascript by printing the number in the alert pop up
+            String script = "alert(number = $('ul#homefeatured > li').length);";
+            JavascriptExecutor jsScript = (JavascriptExecutor)driver;
+            String result = (String) jsScript.executeScript(script);
+            Alert alert = driver.switchTo().alert();
+            String alertText = alert.getText();
+            System.out.println("Popular items result is: " + alertText);
+            Assert.assertEquals(expectedResult, alertText);
+            alert.accept();
+        }
 
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        if (bestSellerBtn.isDisplayed()) {
+            String script = "alert(number = $('ul#blockbestsellers > li').length);";
+            JavascriptExecutor jsScript = (JavascriptExecutor)driver;
+            String result = (String) jsScript.executeScript(script);
+            Alert alert = driver.switchTo().alert();
+            String alertText = alert.getText();
+            System.out.println("Best seller items result is: " + alertText);
+            Assert.assertEquals(expectedResult, alertText);
+            alert.accept();
+        }
     }
 
     @Test(priority = 3)

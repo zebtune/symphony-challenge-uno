@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-10-29T04:39:12Z" name="Command line suite" finished-at="2020-10-29T04:39:48Z" duration-ms="35234">
+  <suite name="Command line suite" duration-ms="33328" started-at="2020-10-29T10:03:27Z" finished-at="2020-10-29T10:04:00Z">
     <groups>
     </groups>
-    <test started-at="2020-10-29T04:39:12Z" name="Command line test" finished-at="2020-10-29T04:39:48Z" duration-ms="35234">
+    <test name="Command line test" duration-ms="33328" started-at="2020-10-29T10:03:27Z" finished-at="2020-10-29T10:04:00Z">
       <class name="TestClass">
-        <test-method is-config="true" signature="getUrlAndMaximizeWindow()[pri:0, instance:TestClass@731a74c]" started-at="2020-10-29T04:39:12Z" name="getUrlAndMaximizeWindow" finished-at="2020-10-29T04:39:22Z" duration-ms="9722" status="PASS">
+        <test-method status="PASS" signature="getUrlAndMaximizeWindow()[pri:0, instance:TestClass@1b0375b3]" name="getUrlAndMaximizeWindow" is-config="true" duration-ms="7984" started-at="2020-10-29T10:03:27Z" finished-at="2020-10-29T10:03:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getUrlAndMaximizeWindow -->
-        <test-method signature="registerAccount()[pri:1, instance:TestClass@731a74c]" started-at="2020-10-29T04:39:22Z" name="registerAccount" finished-at="2020-10-29T04:39:32Z" duration-ms="9536" status="PASS">
+        <test-method status="PASS" signature="registerAccount()[pri:1, instance:TestClass@1b0375b3]" name="registerAccount" duration-ms="11099" started-at="2020-10-29T10:03:35Z" finished-at="2020-10-29T10:03:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registerAccount -->
-        <test-method is-config="true" signature="exitDriver()[pri:0, instance:TestClass@731a74c]" started-at="2020-10-29T04:39:32Z" name="exitDriver" finished-at="2020-10-29T04:39:32Z" duration-ms="101" status="PASS">
+        <test-method status="PASS" signature="exitDriver()[pri:0, instance:TestClass@1b0375b3]" name="exitDriver" is-config="true" duration-ms="102" started-at="2020-10-29T10:03:46Z" finished-at="2020-10-29T10:03:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- exitDriver -->
-        <test-method is-config="true" signature="getUrlAndMaximizeWindow()[pri:0, instance:TestClass@731a74c]" started-at="2020-10-29T04:39:32Z" name="getUrlAndMaximizeWindow" finished-at="2020-10-29T04:39:39Z" duration-ms="7116" status="PASS">
+        <test-method status="PASS" signature="getUrlAndMaximizeWindow()[pri:0, instance:TestClass@1b0375b3]" name="getUrlAndMaximizeWindow" is-config="true" duration-ms="6295" started-at="2020-10-29T10:03:46Z" finished-at="2020-10-29T10:03:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getUrlAndMaximizeWindow -->
-        <test-method signature="verifyProductsInSection()[pri:2, instance:TestClass@731a74c]" started-at="2020-10-29T04:39:39Z" name="verifyProductsInSection" finished-at="2020-10-29T04:39:39Z" duration-ms="284" status="PASS">
+        <test-method status="PASS" signature="verifyProductsInSection()[pri:2, instance:TestClass@1b0375b3]" name="verifyProductsInSection" duration-ms="303" started-at="2020-10-29T10:03:52Z" finished-at="2020-10-29T10:03:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyProductsInSection -->
-        <test-method is-config="true" signature="exitDriver()[pri:0, instance:TestClass@731a74c]" started-at="2020-10-29T04:39:39Z" name="exitDriver" finished-at="2020-10-29T04:39:39Z" duration-ms="99" status="PASS">
+        <test-method status="PASS" signature="exitDriver()[pri:0, instance:TestClass@1b0375b3]" name="exitDriver" is-config="true" duration-ms="91" started-at="2020-10-29T10:03:52Z" finished-at="2020-10-29T10:03:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- exitDriver -->
-        <test-method is-config="true" signature="getUrlAndMaximizeWindow()[pri:0, instance:TestClass@731a74c]" started-at="2020-10-29T04:39:39Z" name="getUrlAndMaximizeWindow" finished-at="2020-10-29T04:39:46Z" duration-ms="6924" status="PASS">
+        <test-method status="PASS" signature="getUrlAndMaximizeWindow()[pri:0, instance:TestClass@1b0375b3]" name="getUrlAndMaximizeWindow" is-config="true" duration-ms="6003" started-at="2020-10-29T10:03:52Z" finished-at="2020-10-29T10:03:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getUrlAndMaximizeWindow -->
-        <test-method signature="saveResultsToTxt()[pri:3, instance:TestClass@731a74c]" started-at="2020-10-29T04:39:46Z" name="saveResultsToTxt" finished-at="2020-10-29T04:39:48Z" duration-ms="1331" status="PASS">
+        <test-method status="PASS" signature="saveResultsToTxt()[pri:3, instance:TestClass@1b0375b3]" name="saveResultsToTxt" duration-ms="1328" started-at="2020-10-29T10:03:58Z" finished-at="2020-10-29T10:04:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- saveResultsToTxt -->
-        <test-method is-config="true" signature="exitDriver()[pri:0, instance:TestClass@731a74c]" started-at="2020-10-29T04:39:48Z" name="exitDriver" finished-at="2020-10-29T04:39:48Z" duration-ms="98" status="PASS">
+        <test-method status="PASS" signature="exitDriver()[pri:0, instance:TestClass@1b0375b3]" name="exitDriver" is-config="true" duration-ms="96" started-at="2020-10-29T10:04:00Z" finished-at="2020-10-29T10:04:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- exitDriver -->
